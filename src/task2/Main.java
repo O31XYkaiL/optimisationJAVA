@@ -13,22 +13,22 @@ public class Main {
         // Пример функции: f(x) = 3 * x^(3/2)
         Function<Double, Double> quadraticFunction = x -> 3 * Math.pow(x, 1.5);
 
-        // Создаем объект task2.task2_1
-        task2_1 analyzer = new task2_1(quadraticFunction);
+        // Создаем объект task2.Task2_1
+        Task2_1 analyzer = new Task2_1(quadraticFunction);
 
         // Проверяем, является ли функция бесконечно малой
         System.out.println("Task2_1 - Is Infinitesimal: " + analyzer.isInfinitesimal());
 
         // Получаем табличное представление функции
-        task2_1.TableItem[] table = analyzer.getTableRepresentation(0, 15);
+        Task2_1.TableItem[] table = analyzer.getTableRepresentation(0, 15);
         System.out.println("Task2_1 - Table Representation:");
-        for (task2_1.TableItem item : table) {
+        for (Task2_1.TableItem item : table) {
             System.out.println("Input: " + item.getInput() + ", Output: " + item.getOutput() +
                     ", Log Input: " + item.getLgInput() + ", Log Output: " + item.getLgOutput());
         }
 
         // Получаем асимптоту lg-графика
-        task2_1.Asymptote asymptote = analyzer.getAsymptote();
+        Task2_1.Asymptote asymptote = analyzer.getAsymptote();
         System.out.println("Task2_1 - Asymptote: Alpha = " + asymptote.getAlpha() + ", K = " + asymptote.getK());
 
         // Получаем коэффициент C БМФ
@@ -39,17 +39,17 @@ public class Main {
         // Пример функции: f(N) ≈ C·N^α
         Function<Double, Double> customFunction = n -> 5 * Math.pow(n, 1.8);
 
-        // Используем task2.task2_2 для анализа пользовательской функции
-        task2_2 customFunctionAnalysis = new task2_2(customFunction);
+        // Используем task2.Task2_2 для анализа пользовательской функции
+        Task2_2 customFunctionAnalysis = new Task2_2(customFunction);
 
-        // Используем методы task2.task2_2 для получения данных
-        task2_2.TableItem[] tableItems = customFunctionAnalysis.getTableRepresentation();
-        task2_2.Asymptote asymptoteResult = customFunctionAnalysis.getAsymptote();
+        // Используем методы task2.Task2_2 для получения данных
+        Task2_2.TableItem[] tableItems = customFunctionAnalysis.getTableRepresentation();
+        Task2_2.Asymptote asymptoteResult = customFunctionAnalysis.getAsymptote();
         double coefficientResult = customFunctionAnalysis.getCoefficient();
 
         // Вывод результатов или их использование по необходимости
         System.out.println("Task2_2 - Table Representation:");
-        for (task2_2.TableItem item : tableItems) {
+        for (Task2_2.TableItem item : tableItems) {
             System.out.println("Input: " + item.getInput() + ", Output: " + item.getOutput());
         }
 

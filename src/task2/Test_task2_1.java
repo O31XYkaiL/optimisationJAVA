@@ -2,9 +2,8 @@ package task2;
 
 import org.junit.Assert;
 import org.junit.Test;
-import task2.task2_1;
 
-public class test_task2_1 {
+public class Test_task2_1 {
 
     private static final double[] ExpectedTableInputs = {
             1, 1E-01, 1E-02, 1E-03, 1E-04, 1E-05, 1E-06, 1E-07, 1E-08, 1E-09,
@@ -26,22 +25,22 @@ public class test_task2_1 {
 
     @Test
     public void infinitesimalTest() {
-        task2_1 ia = new task2_1(this::function);
+        Task2_1 ia = new Task2_1(this::function);
         boolean got = ia.isInfinitesimal();
         Assert.assertTrue(got);
     }
 
     @Test
     public void notInfinitesimalTest() {
-        task2_1 ia = new task2_1(this::notInfinitesimalFunction);
+        Task2_1 ia = new Task2_1(this::notInfinitesimalFunction);
         boolean got = ia.isInfinitesimal();
         Assert.assertFalse(got);
     }
 
     @Test
     public void tableRepresentationTest() {
-        task2_1 ia = new task2_1(this::function);
-        task2_1.TableItem[] got = ia.getTableRepresentation(0, 16);
+        Task2_1 ia = new Task2_1(this::function);
+        Task2_1.TableItem[] got = ia.getTableRepresentation(0, 16);
 
         for (int i = 0; i < 16; i++) {
             Assert.assertEquals(ExpectedTableInputs[i], got[i].getInput(), 0);
@@ -53,15 +52,15 @@ public class test_task2_1 {
 
     @Test
     public void asymptoteTest() {
-        task2_1 ia = new task2_1(this::function);
-        task2_1.Asymptote got = ia.getAsymptote();
+        Task2_1 ia = new Task2_1(this::function);
+        Task2_1.Asymptote got = ia.getAsymptote();
         Assert.assertEquals(got.getAlpha(), 1, 0);
         Assert.assertEquals(got.getK(), 1, 0);
     }
 
     @Test
     public void coefficientTest() {
-        task2_1 ia = new task2_1(this::function);
+        Task2_1 ia = new Task2_1(this::function);
         double got = ia.getCoefficient();
         Assert.assertEquals(got, 10, 0);
     }
