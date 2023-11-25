@@ -1,9 +1,9 @@
-package task2;
+package task2_1;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class Test_task2_1 {
+public class InfinitesimalAnalyzerTest {
 
     private static final double[] ExpectedTableInputs = {
             1, 1E-01, 1E-02, 1E-03, 1E-04, 1E-05, 1E-06, 1E-07, 1E-08, 1E-09,
@@ -25,44 +25,44 @@ public class Test_task2_1 {
 
     @Test
     public void infinitesimalTest() {
-        Task2_1 ia = new Task2_1(this::function);
+        InfinitesimalAnalyzer ia = new InfinitesimalAnalyzer(this::function);
         boolean got = ia.isInfinitesimal();
-        Assert.assertTrue(got);
+        assertTrue(got);
     }
 
     @Test
     public void notInfinitesimalTest() {
-        Task2_1 ia = new Task2_1(this::notInfinitesimalFunction);
+        InfinitesimalAnalyzer ia = new InfinitesimalAnalyzer(this::notInfinitesimalFunction);
         boolean got = ia.isInfinitesimal();
-        Assert.assertFalse(got);
+        assertFalse(got);
     }
 
     @Test
     public void tableRepresentationTest() {
-        Task2_1 ia = new Task2_1(this::function);
-        Task2_1.TableItem[] got = ia.getTableRepresentation(0, 16);
+        InfinitesimalAnalyzer ia = new InfinitesimalAnalyzer(this::function);
+        TableItem[] got = ia.getTableRepresentation(0, 16);
 
         for (int i = 0; i < 16; i++) {
-            Assert.assertEquals(ExpectedTableInputs[i], got[i].getInput(), 0);
-            Assert.assertTrue(Math.abs(ExpectedTableOutputs[i] - got[i].getOutput()) < 1e-10);
-            Assert.assertEquals(ExpectedTableLgInputs[i], got[i].getLgInput(), 0);
-            Assert.assertEquals(ExpectedTableLgOutputs[i], got[i].getLgOutput(), 0);
+            assertEquals(ExpectedTableInputs[i], got[i].getInput());
+            assertTrue(Math.abs(ExpectedTableOutputs[i] - got[i].getOutput()) < 1e-10);
+            assertEquals(ExpectedTableLgInputs[i], got[i].getLgInput());
+            assertEquals(ExpectedTableLgOutputs[i], got[i].getLgOutput());
         }
     }
 
     @Test
     public void asymptoteTest() {
-        Task2_1 ia = new Task2_1(this::function);
-        Task2_1.Asymptote got = ia.getAsymptote();
-        Assert.assertEquals(got.getAlpha(), 1, 0);
-        Assert.assertEquals(got.getK(), 1, 0);
+        InfinitesimalAnalyzer ia = new InfinitesimalAnalyzer(this::function);
+        Asymptote got = ia.getAsymptote();
+        assertEquals(1, got.getAlpha());
+        assertEquals(1, got.getK());
     }
 
     @Test
     public void coefficientTest() {
-        Task2_1 ia = new Task2_1(this::function);
+        InfinitesimalAnalyzer ia = new InfinitesimalAnalyzer(this::function);
         double got = ia.getCoefficient();
-        Assert.assertEquals(got, 10, 0);
+        assertEquals(10, got);
     }
 
     private double function(double x) {
