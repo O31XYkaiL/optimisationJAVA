@@ -13,10 +13,8 @@ public class Main {
         TableItem[] table = ia.getTableRepresentation(0, 16);
         System.out.println("Таблица:");
         for (TableItem item : table) {
-            System.out.println("X: " + item.getInput() +
-                    ", Y: " + item.getOutput() +
-                    ", lg(X): " + item.getLgInput() +
-                    ", lg(Y): " + item.getLgOutput());
+            System.out.printf("X: %.1E, Y: %.6E, lg(X): %.1E, lg(Y): %.6E%n",
+                    item.getInput(), item.getOutput(),  item.getLgInput(), item.getLgOutput());
         }
 
         // Получение и вывод асимптоты lg-графика

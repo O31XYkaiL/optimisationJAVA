@@ -3,7 +3,7 @@ package task1_3;
 import java.util.function.Function;
 import java.util.Locale;
 
-public class IntegralCalculation {
+public class ProgramTrapezoidal {
 
     public static void main(String[] args) {
         // Устанавливаем локаль с разделителем запятой

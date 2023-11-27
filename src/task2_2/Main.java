@@ -8,8 +8,6 @@ public class Main {
         double alpha = 2.0;
         double C = 0.15;
 
-        System.out.println("N | F | lg(N) | lg(F)");
-
         // Определение интервала
         int start = 100;
         int end = 1000;
@@ -24,12 +22,8 @@ public class Main {
             double F = C * Math.pow(N, alpha);
 
             // Выводим результаты в таблице
-            System.out.printf("%d | %.2f | %.2f | %.8f%n",
-                    N,
-                    F,
-                    Math.log10(N),
-                    Math.log10(F)
-            );
+            System.out.printf("N: %d, F: %.2E, lg(N): %.6E, lg(F): %.6E%n",
+                    N, F, Math.log10(N), Math.log10(F));
         }
 
         // Получаем асимптоту и коэффициент C

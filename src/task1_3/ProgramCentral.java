@@ -3,7 +3,7 @@ package task1_3;
 import java.util.function.Function;
 import java.util.Locale;
 
-public class Program {
+public class ProgramCentral {
     static double centralRectangle(Function<Double, Double> f, double a, double b, long n) {
         double h = (b - a) / n;
         double sum = (f.apply(a) + f.apply(b)) / 2;
