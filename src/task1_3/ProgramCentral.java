@@ -19,10 +19,10 @@ public class ProgramCentral {
 
     public static void main(String[] args) {
         // Лямбда-выражение для функции
-        Function<Double, Double> f = x -> Math.sin(11 * x) + Math.sqrt(x * x + 11 * x);
+        Function<Double, Double> f = x -> Math.sin(13 * x) + Math.sqrt(x * x + 13 * x);
 
-        double lowerLimit = 11.0;
-        double upperLimit = 22.0;
+        double lowerLimit = 13.0;
+        double upperLimit = 26.0;
         long initialN = 1L;
         double maxN = 1E+10;
 
