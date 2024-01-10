@@ -1,4 +1,4 @@
-package task1_3;
+package lr2.task1_3;
 
 import java.util.function.Function;
 import java.util.Locale;
@@ -9,13 +9,13 @@ public class ProgramTrapezoidal {
         // Устанавливаем локаль с разделителем запятой
         Locale.setDefault(Locale.FRENCH);
 
-        double lowerLimit = 13.0;
-        double upperLimit = 26.0;
+        double lowerLimit = 11.0;
+        double upperLimit = 22.0;
 
         double initialN = 1.0;
 
         for (double n = initialN; n <= 1E+10; n *= 10) {
-            Function<Double, Double> function = x -> Math.sin(13 * x) + Math.sqrt(x * x + 13 * x);
+            Function<Double, Double> function = x -> Math.sin(11 * x) + Math.sqrt(x * x + 11 * x);
 
             double result = trapezoidalIntegral(lowerLimit, upperLimit, n, function);
 

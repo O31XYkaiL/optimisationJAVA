@@ -1,8 +1,8 @@
-package task2_2;
+package lr2.task2_2;
 
-import task2_1.Asymptote;
-import task2_1.Table;
-import task2_1.Task2_1;
+import lr2.task2_1.Asymptote;
+import lr2.task2_1.Table;
+import lr2.task2_1.Task2_1;
 
 public class Task2_2 {
     private final Task2_1 function;

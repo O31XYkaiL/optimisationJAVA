@@ -1,4 +1,4 @@
-package task2_1;
+package lr2.task2_1;
 
 public class Table {
     private double n;

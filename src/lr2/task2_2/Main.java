@@ -1,4 +1,4 @@
-package task2_2;
+package lr2.task2_2;
 
 public class Main {
     public static void main(String[] args) {

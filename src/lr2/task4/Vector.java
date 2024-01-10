@@ -1,4 +1,4 @@
-package task4;
+package lr2.task4;
 
 public class Vector {
     private final double[] items;

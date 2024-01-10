@@ -1,8 +1,8 @@
-package task4;
+package lr2.task4;
 
-import task2_1.Asymptote;
-import task2_1.Table;
-import task2_1.Task2_1;
+import lr2.task2_1.Asymptote;
+import lr2.task2_1.Table;
+import lr2.task2_1.Task2_1;
 
 import java.util.function.Function;
 

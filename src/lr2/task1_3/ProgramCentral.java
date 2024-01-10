@@ -1,4 +1,4 @@
-package task1_3;
+package lr2.task1_3;
 
 import java.util.function.Function;
 import java.util.Locale;
@@ -19,10 +19,10 @@ public class ProgramCentral {
 
     public static void main(String[] args) {
         // Лямбда-выражение для функции
-        Function<Double, Double> f = x -> Math.sin(13 * x) + Math.sqrt(x * x + 13 * x);
+        Function<Double, Double> f = x -> Math.sin(11 * x) + Math.sqrt(x * x + 11 * x);
 
-        double lowerLimit = 13.0;
-        double upperLimit = 26.0;
+        double lowerLimit = 11.0;
+        double upperLimit = 22.0;
         long initialN = 1L;
         double maxN = 1E+10;
 

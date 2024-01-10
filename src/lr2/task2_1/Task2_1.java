@@ -1,4 +1,4 @@
-package task2_1;
+package lr2.task2_1;
 
 import java.util.function.Function;
 
@@ -43,9 +43,5 @@ public class Task2_1 {
 
     public Asymptote getAsymptote() {
         return new Asymptote(func);
-    }
-
-    public void setFunc(Function<Double, Double> func) {
-        this.func = func;
     }
 }
