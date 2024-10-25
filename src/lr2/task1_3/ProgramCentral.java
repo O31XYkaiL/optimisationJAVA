@@ -13,20 +13,17 @@ public class ProgramCentral {
             sum += f.apply(x);
         }
 
-        double result = h * sum;
-        return result;
+        return h * sum;
     }
 
     public static void main(String[] args) {
-        // Лямбда-выражение для функции
-        Function<Double, Double> f = x -> Math.sin(11 * x) + Math.sqrt(x * x + 11 * x);
+        Function<Double, Double> f = x -> Math.sin(5 * x) + Math.sqrt(x * x + 5 * x);
 
-        double lowerLimit = 11.0;
-        double upperLimit = 22.0;
+        double lowerLimit = 5.0;
+        double upperLimit = 10.0;
         long initialN = 1L;
         double maxN = 1E+10;
 
-        // Устанавливаем локаль с разделителем запятой
         Locale.setDefault(Locale.FRENCH);
 
         for (long n = initialN; n <= maxN; n *= 10) {
