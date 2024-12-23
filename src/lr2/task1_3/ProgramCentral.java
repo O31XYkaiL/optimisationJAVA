@@ -6,10 +6,10 @@ import java.util.Locale;
 public class ProgramCentral {
     static double centralRectangle(Function<Double, Double> f, double a, double b, long n) {
         double h = (b - a) / n;
-        double sum = (f.apply(a) + f.apply(b)) / 2;
+        double sum = 0;
 
-        for (long i = 1; i < n; i++) {
-            double x = a + h * i;
+        for (long i = 1; i <= n; i++) {
+            double x = a + h * (i - 0.5);
             sum += f.apply(x);
         }
 
@@ -17,10 +17,10 @@ public class ProgramCentral {
     }
 
     public static void main(String[] args) {
-        Function<Double, Double> f = x -> Math.sin(5 * x) + Math.sqrt(x * x + 5 * x);
+        Function<Double, Double> f = x -> Math.sin(7 * x) + Math.sqrt(x * x + 7 * x);
 
-        double lowerLimit = 5.0;
-        double upperLimit = 10.0;
+        double lowerLimit = 7.0;
+        double upperLimit = 14.0;
         long initialN = 1L;
         double maxN = 1E+10;
 

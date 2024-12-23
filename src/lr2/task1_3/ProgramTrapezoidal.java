@@ -9,31 +9,31 @@ public class ProgramTrapezoidal {
 
         Locale.setDefault(Locale.FRENCH);
 
-        double lowerLimit = 5.0;
-        double upperLimit = 10.0;
+        double lowerLimit = 7.0;
+        double upperLimit = 14.0;
 
-        double initialN = 1.0;
+        long initialN = 1L;
 
-        for (double n = initialN; n <= 1E+10; n *= 10) {
-            Function<Double, Double> function = x -> Math.sin(5 * x) + Math.sqrt(x * x + 5 * x);
+        for (long n = initialN; n <= 1E+10; n *= 10) {
+            Function<Double, Double> function = x -> Math.sin(7 * x) + Math.sqrt(x * x + 7 * x);
 
             double result = trapezoidalIntegral(lowerLimit, upperLimit, n, function);
 
-            System.out.printf("Результат для n = %.1f: %.12f%n", n, result);
+            System.out.printf("Результат для n = %d: %.12f%n", n, result);
         }
     }
 
-    public static double trapezoidalIntegral(double a, double b, double n, Function<Double, Double> f) {
+    public static double trapezoidalIntegral(double a, double b, long n, Function<Double, Double> f) {
         double width = (b - a) / n;
-        double trapezoidalIntegral = 0;
+        double sum = 0;
 
-        for (double step = 0; step < n; step++) {
-            double x1 = a + step * width;
-            double x2 = a + (step + 1) * width;
-
-            trapezoidalIntegral += 0.5 * (x2 - x1) * (f.apply(x1) + f.apply(x2));
+        for (long i = 1; i < n; i++) {
+            double x = a + i * width;
+            sum += f.apply(x);
         }
 
-        return trapezoidalIntegral;
+        sum += (f.apply(a) + f.apply(b)) / 2;
+
+        return width * sum;
     }
 }
