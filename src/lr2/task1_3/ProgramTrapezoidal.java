@@ -9,13 +9,13 @@ public class ProgramTrapezoidal {
 
         Locale.setDefault(Locale.FRENCH);
 
-        double lowerLimit = 7.0;
-        double upperLimit = 14.0;
+        double lowerLimit = 8.0;
+        double upperLimit = 16.0;
 
         long initialN = 1L;
 
         for (long n = initialN; n <= 1E+10; n *= 10) {
-            Function<Double, Double> function = x -> Math.sin(7 * x) + Math.sqrt(x * x + 7 * x);
+            Function<Double, Double> function = x -> Math.sin(8 * x) + Math.sqrt(x * x + 8 * x);
 
             double result = trapezoidalIntegral(lowerLimit, upperLimit, n, function);
 

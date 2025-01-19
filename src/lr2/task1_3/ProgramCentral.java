@@ -17,10 +17,10 @@ public class ProgramCentral {
     }
 
     public static void main(String[] args) {
-        Function<Double, Double> f = x -> Math.sin(7 * x) + Math.sqrt(x * x + 7 * x);
+        Function<Double, Double> f = x -> Math.sin(8 * x) + Math.sqrt(x * x + 8 * x);
 
-        double lowerLimit = 7.0;
-        double upperLimit = 14.0;
+        double lowerLimit = 8.0;
+        double upperLimit = 16.0;
         long initialN = 1L;
         double maxN = 1E+10;
 
